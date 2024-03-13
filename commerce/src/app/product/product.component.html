@@ -1,0 +1,76 @@
+
+<style>
+.add-product-button {
+    margin-top: 10px;
+    margin-left: 1000px;
+display: inline-block;
+background-color: #b82a57;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+text-decoration: none;
+cursor: pointer;
+font-size: 16px;
+}
+
+.add-product-button:hover {
+background-color:black;
+}
+
+</style>
+    <title>Products Lists</title>
+
+<!-- app.component.html -->
+
+<!-- Add Product Button with Page Link -->
+
+<div class="sidenav1 faint-table"
+    style=" margin-top: 70px;display: block;background-color: #328c5a;height: 100%;width: 170px;position: fixed;z-index: 1;top: 0;left: 0;color: white;background-color: #1b2631;overflow-x: hidden;padding-top: 20px;">
+    <br>
+    <a routerLink="/product" routerLinkActive="active"
+        style="text-decoration: none;font-size: 20px;color: white;text-align: center;">
+       
+    </a>
+</div>
+
+<div class="main faint-table" style=" margin-left: 180px;font-size: 28px;padding: 0px 10px;
+     font-family: 'Roboto', sans-serif;opacity: 0.9;">
+    <div class="card shadow">
+        <div class="card-header faint-table thead-bg" style="background-color:#b82a57; color: white;text-align: center;">
+            List of Available Products. <a routerLink="/addproducts" class="add-product-button">Add Product</a>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered  faint-table ">
+                <thead class="thead-bg">
+                    <tr>
+                        <th scope="col">NA</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">DiscountedPrice</th>
+                        <th scope="col">actualPrice</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of ProductsLists; let i = index" [class.faint-row]="product.shouldBeFaint">
+                        <td>{{i+1}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.discountedPrice}}</td>
+                        <td>{{product.actualPrice}}</td>
+                        <td>
+                            <button type="button" class="btn btn-success"><a routerLink="/product/{{product.id}}"
+                                    style="color: white;text-decoration: none;">Update</a></button>
+        
+                    <button type="button" class="btn btn-danger" (click)="deleteProduct(product.id)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+        
+            </table>
+        </div>
+        </div>
+        </div>
+        <router-outlet />
+        <router-outlet></router-outlet>

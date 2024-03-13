@@ -1,0 +1,84 @@
+
+  
+<title>Add Products</title>
+
+
+    <div class="sidenav1 faint-table"
+        style=" margin-top: 70px;display: block;background-color: #328c5a;height: 100%;width: 170px;position: fixed;z-index: 1;top: 0;left: 0;color: white;background-color: #1b2631;overflow-x: hidden;padding-top: 20px;">
+        <br>
+        <a   routerLink="/product" routerLinkActive="active"
+            style="text-decoration: none;font-size: 20px;color: white;text-align: center;">
+            Back
+        </a>
+    </div>
+
+    <div class="main faint-table" style=" margin-left: 180px;font-size: 28px;padding: 0px 10px;
+     font-family: 'Roboto', sans-serif;opacity: 0.9;">
+    <div class="card shadow">
+        <div class="container mt-4"
+            style="box-shadow:#328c5a">
+            <h2  style="font-size: 20px; font-family: 'Roboto', sans-serif;opacity: 0.9;">ADD PRODUCTS</h2>
+            <div class="container-fluid" style="background-color: #328c5a;">.</div>
+
+            <form class="form-horizontal" [formGroup]=" PostusersForm" (ngSubmit)="addProduct()" style="margin-top: 30px;">
+                <!-- Name Input -->
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">
+                        <h2 style="font-size: 20px; font-family: 'Roboto', sans-serif;opacity: 0.9;">Name:</h2>
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" formControlName="name" required="true"
+                            id="name" placeholder="Enter Product name" autocomplete="off" style=" border-radius: 10px;height: 45px;">
+                    </div>
+                </div>
+
+
+                <!-- Name Input -->
+                <div class="form-group row">
+                    <label for="description" class="col-sm-2 col-form-label">
+                        <h2 style="font-size: 20px; font-family: 'Roboto', sans-serif;opacity: 0.8;">Descriptions:</h2>
+                    </label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" formControlName="description" required="true" id="description"
+                            placeholder="Enter Product descriptions" autocomplete="on" style=" border-radius: 10px;height: 100px;"></textarea>
+                    </div>
+                </div>
+
+
+                <!-- Name Input -->
+                <div class="form-group row">
+                    <label for="discountedPrice" class="col-sm-2 col-form-label">
+                        <h2 style="font-size: 20px; font-family: 'Roboto', sans-serif;opacity: 0.8;">Discounted Price:</h2>
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" formControlName="discountedPrice" required="true" id="discountedPrice"
+                            placeholder="Enter Product discountedPrice" autocomplete="on" style=" border-radius: 10px;height: 45px;">
+                    </div>
+                </div>
+                <!-- Name Input -->
+                <div class="form-group row">
+                    <label for="actualPrice" class="col-sm-2 col-form-label">
+                        <h2 style="font-size: 20px; font-family: 'Roboto', sans-serif;opacity: 0.8;">Actual Price:</h2>
+                    </label>
+                    <div class="col-sm-10">
+                        <input type="actualPrice" class="form-control" formControlName="actualPrice" required="true" id="actualPrice"
+                            placeholder="Enter Product actual Price" style=" border-radius: 10px;height: 45px;">
+                    </div>
+                </div>
+
+             
+
+                <!-- Submit Button -->
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="" class="btn btn" style="background-color: #328c5a;color: white;">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<router-outlet />
+<router-outlet></router-outlet>

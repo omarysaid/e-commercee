@@ -1,0 +1,70 @@
+
+
+    <div class="sidenav">
+        <br>
+        <a routerLink="/product" routerLinkActive="active" style="font-size: 18px;">Back-home</a>
+    </div>
+
+    <div class="main">
+        <div class="container mt-4"
+            style="box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
+            <h2>UPDATE Product</h2>
+
+            <form class="form-horizontal" [formGroup]="updateForm">
+                <!-- Name Input -->
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" formControlName="name" id="name"
+                            placeholder="Enter name">
+                    </div>
+                </div>
+
+                <!-- Product Input -->
+                <div class="form-group row">
+                    <label for="description" class="col-sm-2 col-form-label">Description:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" formControlName="description" id="description"
+                            placeholder="Enter description">
+                    </div>
+                </div>
+
+                <!-- Price Input -->
+                <div class="form-group row">
+                    <label for="discountedPrice" class="col-sm-2 col-form-label">discountedPrice:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" formControlName="discountedPrice" id="discountedPrice"
+                            placeholder="Enter discountedPrice">
+                    </div>
+                </div>
+
+                <!-- Total Input -->
+                <div class="form-group row">
+                    <label for="actualPrice" class="col-sm-2 col-form-label">actualPrice:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="actualPrice" formControlName="actualPrice"
+                            placeholder="Enter actualPrice">
+                    </div>
+                </div>
+
+
+               
+
+                <!-- Submit Button -->
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-sm-2">
+                        <button type="submit" type="submit" (click)="updateProduct()"
+                            class="btn btn-dark">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+
+
+

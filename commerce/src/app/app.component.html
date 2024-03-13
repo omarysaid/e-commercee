@@ -1,0 +1,80 @@
+
+
+  <style>
+    /* Customize the colors as needed */
+    .navbar-custom {
+      background-color: #328c5a;
+      /* Blue color */
+    }
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .navbar-nav .nav-link {
+      color: #ffffff;
+      /* White text color */
+    }
+
+    .navbar-custom .navbar-toggler-icon {
+      background-color: #ffffff;
+      /* White color for the hamburger icon */
+    }
+
+    .navbar-custom .navbar-toggler {
+      border-color: #ffffff;
+      /* White color for the border of the hamburger icon */
+    }
+
+     
+    .thead-bg {
+      background-color: #328c5a;
+      /* Green color */
+      color: white;
+      /* Text color */
+      font-family: 'Roboto', sans-serif;
+        text-align: center; 
+      /* Apply the Roboto font to the header */
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      /* Apply the Roboto font to the body */
+    }
+
+    .faint-table {
+      opacity: 0.9;
+      /* You can adjust the opacity level as needed */
+    }
+ 
+  </style>
+
+
+
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#"><img src="../assets/images/hhh.png" 
+      style="height:40px; width:40px; border-radius: 80px;">OMOLLO E-COMMERCE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto thead-bg">
+        <li class="nav-item">
+          <a class="nav-link thead-bg"  routerLink="/users">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link thead-bg"  routerLink="/customers">Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link thead-bg"  routerLink="/product">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link thead-bg" routerLink="/update-products">Products</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+<router-outlet />
+<router-outlet></router-outlet>

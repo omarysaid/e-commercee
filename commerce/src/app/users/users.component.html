@@ -1,0 +1,79 @@
+<style>
+  .add-product-button {
+    margin-top: 10px;
+    margin-left: 1000px;
+    display: inline-block;
+    background-color: #b82a57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .add-product-button:hover {
+    background-color: black;
+  }
+</style>
+<title>Users Lists</title>
+
+<!-- app.component.html -->
+
+<!-- Add Product Button with Page Link -->
+
+<div class="sidenav1 faint-table"
+  style=" margin-top: 70px;display: block;background-color: #328c5a;height: 100%;width: 170px;position: fixed;z-index: 1;top: 0;left: 0;color: white;background-color: #1b2631;overflow-x: hidden;padding-top: 20px;">
+  <br>
+  <a routerLink="/users" routerLinkActive="active"
+    style="text-decoration: none;font-size: 20px;color: white;text-align: center;">
+  
+  </a>
+</div>
+
+<div class="main faint-table" style=" margin-left: 180px;font-size: 28px;padding: 0px 10px;
+     font-family: 'Roboto', sans-serif;opacity: 0.9;">
+  <div class="card shadow">
+    <div class="card-header faint-table thead-bg" style="background-color:#b82a57; color: white;text-align: center;">
+      List of registered Users. <a routerLink="/addusers" class="add-product-button">New User</a>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered  faint-table ">
+        <thead class="thead-bg">
+          <tr>
+            <th scope="col">NA</th>
+            <th scope="col">firstname</th>
+            <th scope="col">lastname</th>
+            <th scope="col">username</th>
+            <th scope="col">email</th>
+            <th scope="col">password</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of usersLists; let i = index" [class.faint-row]="user.shouldBeFaint">
+            <td>{{i+1}}</td>
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>
+              <button type="button" class="btn btn-success">Update</button>
+              <button type="button" class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      
+      </table>
+    </div>
+  </div>
+</div>
+<router-outlet />
+<router-outlet></router-outlet>
+
+
+
+
+
